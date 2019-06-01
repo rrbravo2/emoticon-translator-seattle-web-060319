@@ -10,8 +10,13 @@ def load_library(the_file_path)
   result# code goes here
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(the_YAML_file_path, the_emoticon)
+  library = load_library(the_YAML_file_path)
+  if library["get_emoticon"].include?(the_emoticon)
+    library["get_emoticon"][the_emoticon]
+  else
+    "Sorr, that emoticon was not found"
+  end# code goes here
 end
 
 def get_english_meaning
